@@ -24,7 +24,7 @@ function PostsList({ data, userId }) {
       <Actions>
         <LikeButton>
           <Like>60</Like>
-          <Material name="hear-plus-outline" size={20} color="#E52246" />
+          <Material name="heart-plus-outline" size={20} color="#E52246" />
         </LikeButton>
 
         <TimePost>

@@ -4,7 +4,7 @@ export const Actions = styled.View`
   flex-direction: row;
 
   align-items: baseline;
-  justify-content: space-space-between;
+  justify-content: space-between;
 `;
 
 export const Avatar = styled.Image`
