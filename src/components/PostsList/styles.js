@@ -34,7 +34,7 @@ export const Content = styled.Text`
 
 export const ContentView = styled.View``;
 
-export const Header = styled.View`
+export const Header = styled.TouchableOpacity`
   width: 100%;
   
   flex-direction: row;

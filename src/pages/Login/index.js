@@ -7,8 +7,8 @@ import { Button, ButtonText, Container, Input, SignUpButton, SignUpText, Title }
 
 function Login() {
   const { signIn, signUp, loadingAuth } = useContext(AuthContext);
-  const [login, setLogin] = useState(true);
 
+  const [login, setLogin] = useState(true);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -92,9 +92,9 @@ function Login() {
         placeholder="usuario@email.com"
       />
       <Input
+        placeholder="********"
         value={password}
         onChangeText={text => setPassword(text)}
-        placeholder="********"
         secureTextEntry={true}
       />
 
