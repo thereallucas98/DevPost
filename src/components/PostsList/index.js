@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import firestore from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 
@@ -7,6 +7,7 @@ import { formatDistance } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
+import * as Animatable from 'react-native-animatable';
 
 import {
   Actions, Avatar,
@@ -14,8 +15,11 @@ import {
   Header, Like, LikeButton, Name, TimePost
 } from './styles';
 
+const HeartAnimatable = Animatable.createAnimatableComponent(Material);
+
 function PostsList({ data, userId }) {
   const navigation = useNavigation();
+  const likeRef = useRef(null);
 
   function formatTimePost() {
     // console.log(data.created)
@@ -35,6 +39,8 @@ function PostsList({ data, userId }) {
 
   async function likePost(id, likes) {
     const docId = `${userId}_${id}`;
+
+    likeRef.current.rubberBand();
 
     //Checar se o post já foi curtido
     const doc = await firestore().collection('likes')
@@ -94,7 +100,8 @@ function PostsList({ data, userId }) {
           <Like>
             {data.likes === 0 ? '' : data?.likes}
           </Like>
-          <Material
+          <HeartAnimatable
+            ref={likeRef}
             name={data?.likes === 0 ? 'heart-plus-outline' : 'cards-heart'}
             size={20}
             color="#E52246"

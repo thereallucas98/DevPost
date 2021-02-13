@@ -25,6 +25,15 @@ export const ButtonText = styled.Text`
   font-style: italic;
 `;
 
+export const ButtonGoBack = styled.TouchableOpacity`
+  position: absolute;
+  top: 16px;
+  left: 25px;
+
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const Container = styled.View`
   flex: 1;
   align-items: center;
@@ -39,6 +48,33 @@ export const Email = styled.Text`
   color: #DDD;
   font-size: 20px;
   font-style: italic;
+`;
+
+export const Input = styled.TextInput`
+  width: 80%;
+  height: 50px;
+
+  background-color: #DDD;
+  border-radius: 8px;
+
+  padding: 10px;
+  
+  font-size: 20px;
+  text-align: center;
+`;
+
+
+export const ModalContainer = styled.KeyboardAvoidingView`
+  width: 100%;
+  height: 60%;
+
+  background-color: #FFF;
+
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
 `;
 
 export const Name = styled.Text`
